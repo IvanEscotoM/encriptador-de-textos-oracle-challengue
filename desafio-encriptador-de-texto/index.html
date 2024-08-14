@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Textos</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="header__menu">
+            
+        </nav>
+
+    </header>
+    <main class="Presentacion">
+        <section class="Presentacion__contenido">
+            <h1 class="titulo">
+                Encriptador de Textos
+                </strong> </h1>
+            <textarea id="textoUsuario" class="input">  </textarea>
+            <div class="advertencia">
+                <img src="/assets/exclamation.png" width="30" height="30"><p>Introducir letras minúsculas y sin acentos!</p> 
+            </div>
+            <div class="botones__espacio">
+                <button onclick="encriptarTexto();" class="botones"> Encriptar</button>
+                <button onclick="desencriptarTexto();" class="botones"> Desencriptar</button>     
+            </div>
+        </section>
+        <section class="box__visualizador">
+            <p class="negritas" id="texto" >Ningun mensaje fue encontrado</p>
+            <p class="normales" id="texto2" >Ingresa el texto que desees encriptar o desencriptar.</p>
+            <img src="/assets/lupa.png" id="imagen__lupa" width="200" height="100" alt="Imagen de un personaje sin rostro humanoide buscando con una lupa" class="box__visualizador__imagen">
+            
+            <button id="copiar" onclick="copiar();" class="botones__copiar">Copiar</button>
+        </section>
+    </main>
+    <footer class="Footer">
+        <p>Desarrollado y diseñado por Ivan Felipe Escoto Maldonado en Agosto 2024.</p>
+
+    </footer>   
+    <script src="/logica-encriptador.js" defer></script>
+</body> 
+</html>
