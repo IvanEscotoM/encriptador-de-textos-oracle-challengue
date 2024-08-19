@@ -101,17 +101,27 @@ function desencriptarTexto(){
         nuevaCadena= nuevaCadena+" "+listaPalabrasDesencriptadas[i];
     }
     console.log(nuevaCadena);
-    visualizador(nuevaCadena);
+    visualizador2(nuevaCadena);
 
 }
 
 function visualizador(cadena){
     console.log(`la cadena es ${cadena} ...`)
-    document.getElementById("imagen__lupa").hidden=true;
-    document.getElementById("texto").hidden=true;
+    document.getElementById("status__bar").textContent="";
+    document.getElementById("imagen__lupa").setAttribute("src","assets/encriptado.png")
+    document.getElementById("texto").textContent="Mensaje encriptado";
     document.getElementById("texto2").textContent= cadena;
     document.getElementById("copiar").style.visibility="visible";
 
+
+}
+function visualizador2(cadena){
+    console.log(`la cadena es ${cadena} ...`)
+    document.getElementById("status__bar").textContent="";
+    document.getElementById("imagen__lupa").setAttribute("src","assets/desencriptado.png")
+    document.getElementById("texto").textContent="Mensaje desencriptado";
+    document.getElementById("texto2").textContent= cadena;
+    document.getElementById("copiar").style.visibility="visible";
 
 }
 
@@ -119,22 +129,30 @@ function copiar(){
 
     let textoCopiado= document.getElementById("texto2");
     let rango=document.createRange();
-    rango.selectNode(textoCopiado);
-    window.getSelection().removeAllRanges;
-    window.getSelection().addRange(rango);
+
+   
+    rango.selectNodeContents(textoCopiado);
+
+    
+    const seleccion = window.getSelection();
+    seleccion.removeAllRanges();
+
+    seleccion.addRange(rango);
     try{
         let copiaExitosa = document.execCommand('copy');
-        
+        document.getElementById("status__bar").textContent="Texto copiado al portapapeles";
+        setTimeout(function() { document.getElementById("status__bar").textContent=""; },3000);
 
     } catch (err){
         alert('No se pudo copiar'+err.message)
 
     }
-    window.getSelection().removeAllRanges();
+    
+    // window.getSelection().removeAllRanges();
 }
 function campoInicial(){
     document.getElementById("textoUsuario").value="inserta tu texto aqui";
-    document.getElementById("copiar").style.visibility="hidden";
+    document.getElementById("copiar").style.visibility=hidden;
  }
 
 

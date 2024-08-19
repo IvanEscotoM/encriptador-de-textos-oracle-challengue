@@ -31,7 +31,7 @@
     font-size: 18px;
     color: black; 
     text-align: center;
-    margin-top: 50%;
+    
   
 }
 .normales{
@@ -41,7 +41,7 @@
     font-size: 16px;
     color: black;
     text-align: center;
-    margin-bottom: 50%;
+    
 
 }
 
@@ -135,28 +135,28 @@ body{
 .box__visualizador{
     display: flex;
     flex-direction: column;
-    height: 615px;
-    width: 500px;
+    height: 500px;
+    width: 400px;
     border-radius: 15px;
     background-color: var(--color-secundario);
     justify-content: center;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 
 
 }
 
 .botones__copiar{
-    width: 150px;
+    width: 100px;
     text-align: center;
     padding: 20px 0;
     border-radius: 8px;
     font-family: var(--fuente-montse);
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     color: black;
     border: 2px solid var(--color--terciario);
-    margin-top: auto;
+    row-gap: 20px;
 
 }
 
